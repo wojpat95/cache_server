@@ -1,0 +1,110 @@
+Book Revision . . . . . . . . . .
+Prerelease . . . . . . . . . . . .
+Bug Reports . . . . . . . . . . .
+Chat With The Community! . .
+Be notified of updates via Twitter
+We’d love to hear from you! . . .
+Writing your First Angular 2 Web Application
+Simple Reddit Clone . . . . . . . . . . . . . .
+Getting started . . . . . . . . . . . . . . . . .
+TypeScript . . . . . . . . . . . . . . . . . .
+Example Project . . . . . . . . . . . . . .
+Angular’s Dependencies . . . . . . . . . .
+All Dependencies Loaded . . . . . . . . .
+Adding CSS . . . . . . . . . . . . . . . . .
+Our First TypeScript . . . . . . . . . . . . . .
+Making a Component . . . . . . . . . . . .
+Adding a template . . . . . . . . . . . . .
+Booting Our Application . . . . . . . . . .
+Loading our Application . . . . . . . . . .
+Running The App . . . . . . . . . . . . . . .
+Compiling the TypeScript Code to .js . .
+Using npm . . . . . . . . . . . . . . . . . .
+Serving The App . . . . . . . . . . . . . .
+Compiling on every change . . . . . . . .
+Adding Data to the Component . . . . . . . .
+Working with arrays . . . . . . . . . . . . . .
+Expanding our Application . . . . . . . . . .
+The Application Component . . . . . . . .
+Adding Interaction . . . . . . . . . . . . .
+Adding the Article Component . . . . . .
+Rendering Multiple Rows . . . . . . . . . . .
+Creating an Article class . . . . . . . . . .
+Storing multiple Article s . . . . . . . . . .
+CONTENTS
+Configuring the ArticleComponent with inputs
+Rendering a List of Articles . . . . . . . . . . .
+Adding New Article s . . . . . . . . . . . . . . . .
+Finishing Touches . . . . . . . . . . . . . . . . . .
+Displaying the Article Domain . . . . . . . . .
+Re-sorting Based on Score . . . . . . . . . . . .
+Full Code Listing . . . . . . . . . . . . . . . . . . .
+Wrapping Up . . . . . . . . . . . . . . . . . . . . .
+Getting Help . . . . . . . . . . . . . . . . . . . . .
+How Angular Works . . . . . . . . . . . . . . . . . . . .
+Application . . . . . . . . . . . . . . . . . . . . . . . .
+The Navigation Component . . . . . . . . . . . . .
+The Breadcrumbs Component . . . . . . . . . . . .
+The Product List Component . . . . . . . . . . . .
+Product Model . . . . . . . . . . . . . . . . . . . . . .
+Components . . . . . . . . . . . . . . . . . . . . . . .
+Component Decorator . . . . . . . . . . . . . . . . . .
+Component selector . . . . . . . . . . . . . . . .
+Component template . . . . . . . . . . . . . . . .
+Adding A Product . . . . . . . . . . . . . . . . . .
+Viewing the Product with Template Binding . . . .
+Adding More Products . . . . . . . . . . . . . . . .
+Selecting a Product . . . . . . . . . . . . . . . . . .
+Listing products using <products-list> . . . . . .
+The ProductsList Component . . . . . . . . . . . . .
+Configuring the ProductsList @Component Options .
+TypeScript . . . . . . . . . . . . . .
+Angular 2 is built in TypeScript .
+What do we get with TypeScript?
+Types . . . . . . . . . . . . . . .
+Trying it out with a REPL . .
+Built-in types . . . . . . . . . . .
+Classes . . . . . . . . . . . . . .
+Properties . . . . . . . . . . .
+Methods . . . . . . . . . . . .
+Constructors . . . . . . . . .
+Inheritance . . . . . . . . . .
+Utilities . . . . . . . . . . . . . .
+Fat Arrow Functions . . . . .
+Template Strings . . . . . . .
+Wrapping up . .
+How Angular Works . . . . . . . . . . . . . . . . . . . .
+Application . . . . . . . . . . . . . . . . . . . . . . . .
+The Navigation Component . . . . . . . . . . . . .
+The Breadcrumbs Component . . . . . . . . . . . .
+The Product List Component . . . . . . . . . . . .
+Product Model . . . . . . . . . . . . . . . . . . . . . .
+Components . . . . . . . . . . . . . . . . . . . . . . .
+Component Decorator . . . . . . . . . . . . . . . . . .
+Component selector . . . . . . . . . . . . . . . .
+Component template . . . . . . . . . . . . . . . .
+Adding A Product . . . . . . . . . . . . . . . . . .
+Viewing the Product with Template Binding . . . .
+Adding More Products . . . . . . . . . . . . . . . .
+Selecting a Product . . . . . . . . . . . . . . . . . .
+Listing products using <products-list> . . . . . .
+The ProductsList Component . . . . . . . . . . . . .
+Configuring the ProductsList @Component Options
+Component inputs . . . . . . . . . . . . .
+Component outputs . . . . . . . . . . . .
+Emitting Custom Events . . . . . . . . . .
+Writing the ProductsList Controller Class
+Writing the ProductsList View Template
+The Full ProductsList Component . . . .
+The ProductRow Component . . . . . . . . .
+ProductRow Component Configuration . .
+ProductRow Component Definition Class .
+ProductRow template . . . . . . . . . . .
+ProductRow Full Listing . . . . . . . . . .
+The ProductImage Component . . . . . . . .
+The PriceDisplay Component . . . . . . . .
+The ProductDepartment Component . . . . .
+NgModule and Booting the App . . . . . . . .
+Booting the app . . . . . . . . . . . . . . .
+The Completed Project . . . . . . . . . . . .
+A Word on Data Architecture . . . . . . . .

@@ -1,8 +1,12 @@
+#include <algorithm>
+#include <common.h>
 #include "server.h"
 
-Server::Server(int port) {
+Server::Server(int cacheSize, int port) {
     serverPort_ = port;
     queueSize_= 100;
+    cache_ = new Cache(cacheSize);
+    file_ = "data";
 }
 
 Server::~Server() {
@@ -50,6 +54,7 @@ void Server::create(struct sockaddr_in& stAddr) {
 }
 
 void Server::serve() {
+    string request;
     int nClientSocket;
     socklen_t nTmp;
     struct sockaddr_in stClientAddr;
@@ -66,13 +71,57 @@ void Server::serve() {
         }
 
         printf("[connection from %s]\n", inet_ntoa((struct in_addr)stClientAddr.sin_addr));
-        char buffer[50];
-        int n;
-        while ((n = read(nClientSocket, buffer, 50)) > 0){
-            write(1,buffer,n);
-            write(nClientSocket, buffer, n);
-
-        }
+        request = requestHandler(nClientSocket);
+        responseHandler(nClientSocket, request);
         close(nClientSocket);
     }
 }
+
+string Server::requestHandler(int nClientSocket) {
+    char buffer[50];
+    string request = "";
+
+    for(int i = 0; i < 50; i++)
+        buffer[i] = 0;
+    size_t nbytes;
+    ssize_t n;
+    nbytes = sizeof(buffer);
+
+    while ((n = read(nClientSocket, buffer, nbytes)) > 0){
+        request += string(buffer);
+    }
+
+    return request;
+}
+
+//TODO send to client
+//TODO check ' ' parsing
+void Server::responseHandler(int nClientSocket, string request) {
+    string response = "";
+    size_t nbytes;
+    ssize_t n;
+    nbytes = sizeof(request);
+    response = cacheHandler(request);
+    char *buffer = new char[response.length() + 1];
+    strcpy(buffer, response.c_str());
+//    write(1,buffer,nbytes);
+    write(nClientSocket, buffer, nbytes);
+    delete [] buffer;
+
+}
+
+string Server::cacheHandler(string request) {
+    string cachedText = "";
+    int lineNumber;
+
+    if (!Common::isNumeric(request)){
+        return "";
+    }
+    cachedText = cache_->get(lineNumber);
+    if(cachedText.length() == 0){
+        cachedText = Common::readNthLine(file_,lineNumber);
+        cache_->put(cachedText,lineNumber);
+    }
+    return cachedText;
+}
+

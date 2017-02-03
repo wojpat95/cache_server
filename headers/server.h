@@ -11,23 +11,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <arpa/inet.h>
-#include <time.h>
+#include "linkedList.h"
+#include "cache.h"
+#include <unistd.h>
 
 #ifndef MEMCASHEDSERVER_SERVER_H
 #define MEMCASHEDSERVER_SERVER_H
 
 class Server{
 public:
-    Server(int);
+    Server(int, int);
     ~Server();
     void run();
 protected:
     void create(struct sockaddr_in&);
     void serve();
-
+    string requestHandler(int);
+    void responseHandler(int, string);
+    string cacheHandler(string);
     int server_;
     int serverPort_;
     int queueSize_;
+    Cache* cache_;
+    string file_;
 };
 
 
