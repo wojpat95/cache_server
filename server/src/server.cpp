@@ -60,7 +60,7 @@ void Server::serve() {
     int nClientSocket;
     socklen_t nTmp;
     struct sockaddr_in stClientAddr;
-
+    printf("Running: \n");
     while(1)
     {
         /* block for connection request */
