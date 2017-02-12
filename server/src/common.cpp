@@ -14,12 +14,12 @@ string Common::readNthLine(string filename, int N)
 
     string s = "";
 
+    getline(in,s);
     //skip N lines
     while (N > 0 && getline(in,s)){
         N--;
     }
 
-    getline(in,s);
     if (N > 0){
         throw;
     }

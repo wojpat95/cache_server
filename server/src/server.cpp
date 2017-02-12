@@ -2,6 +2,8 @@
 #include <common.h>
 #include "server.h"
 
+using namespace std::chrono;
+
 Server::Server(string file, int queueSize, int cacheSize, int port) {
     serverPort_ = port;
     this->queueSize_= queueSize;
@@ -10,7 +12,7 @@ Server::Server(string file, int queueSize, int cacheSize, int port) {
 }
 
 Server::~Server() {
-
+    close(server_);
 }
 void Server::run() {
     struct sockaddr_in stAddr;
@@ -96,15 +98,19 @@ string Server::requestHandler(int nClientSocket) {
     return request;
 }
 
-//TODO segementation fault get the same element when is only one in cashe
-//TODO
 void Server::responseHandler(int nClientSocket, string request) {
     string response = "";
     size_t nbytes;
     ssize_t n;
     nbytes = sizeof(request);
+    high_resolution_clock::time_point t1 = high_resolution_clock::now();
     response = cacheHandler(request);
     response += "\n";
+    high_resolution_clock::time_point t2 = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+    cout << "Time of getting the line: " << duration << " microseconds" << endl;
+
     char *buffer = new char[response.length() + 1];
     strcpy(buffer, response.c_str());
     // send response to client

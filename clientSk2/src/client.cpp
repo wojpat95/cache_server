@@ -6,6 +6,7 @@ Client::Client(char* server, short port) {
 }
 
 Client::~Client() {
+    close(server_);
 }
 
 void Client::run() {
@@ -58,6 +59,7 @@ void Client::getRequest() {
     char request[50];
     for(int i = 0; i < 50; i++)
         request[i] = 0;
+    cout << "Write number of line:" << endl;
     read(1,request,sizeof(request));
     strcpy(request_, request);
 }
